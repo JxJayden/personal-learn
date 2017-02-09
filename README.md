@@ -1,2 +1,1 @@
-# personal-learn
-personal-learn-code-note
+我与我周旋久，宁作我。
