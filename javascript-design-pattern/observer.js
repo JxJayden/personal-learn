@@ -16,8 +16,6 @@ class Event {
     }
 
     addEventListener(type = 'default', fn) {
-        console.log(type);
-        console.log(fn);
         let sub = this.subscribers;
 
         if (!sub) {
