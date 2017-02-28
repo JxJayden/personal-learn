@@ -35,11 +35,10 @@ proto.walk = function(obj) {
     for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
             value = obj[key];
-            if (typeof value === 'object') {
-                new Observer(value);
-            } else {
+
+            typeof value === 'object' ?
+                new Observer(value) :
                 this.convert(key, value);
-            }
         }
     }
 }
@@ -52,6 +51,7 @@ proto.convert = function(key, value) {
         },
         set: function(newValue) {
             console.log(`你设置了 ${key}，新的值为 ${newValue}`);
+
             if (newValue === value) return value;
             value = newValue;
             return value;
@@ -60,16 +60,16 @@ proto.convert = function(key, value) {
 }
 
 let app1 = new Observer({
-  name: 'youngwind',
-  age: 25
+    name: 'youngwind',
+    age: 25
 });
 
 let app2 = new Observer({
-  university: 'bupt',
-  major: 'computer'
+    university: 'bupt',
+    major: 'computer'
 });
 
 app1.data.name // 你访问了 name
-app1.data.age = 100;  // 你设置了 age，新的值为100
+app1.data.age = 100; // 你设置了 age，新的值为100
 app2.data.university // 你访问了 university
-app2.data.major = 'science'  // 你设置了 major，新的值为 science
+app2.data.major = 'science' // 你设置了 major，新的值为 science
