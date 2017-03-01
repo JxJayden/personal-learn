@@ -58,7 +58,7 @@ function Observer(data) {
     this.walk(data);
 }
 
-proto = Observer.prototype;
+let proto = Observer.prototype;
 proto.walk = function(obj) {
     let value;
 
@@ -123,7 +123,7 @@ proto.$watch = function(key, cb) {
     }
 }
 
-app1 = new Observer({
+let app1 = new Observer({
     name: 'youngwind',
     age: 25
 });
