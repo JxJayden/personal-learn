@@ -22,6 +22,7 @@
  * 3. 通过 data 访问属性和设置属性的时候，均能打印出右侧对应的信息。
  */
 
+
 function Observer(data) {
     this.data = data;
     this.walk(data);
@@ -46,11 +47,11 @@ proto.walk = function(obj) {
 proto.convert = function(key, value) {
     Object.defineProperty(this.data, key, {
         get: function() {
-            console.log(`你访问了 ${key}`)
+            console.log(` 你访问了 ${key}`)
             return value;
         },
         set: function(newValue) {
-            console.log(`你设置了 ${key}，新的值为 ${newValue}`);
+            console.log(` 你设置了 ${key}，新的值为 ${newValue}`);
 
             if (newValue === value) return value;
             value = newValue;
@@ -70,6 +71,6 @@ let app2 = new Observer({
 });
 
 app1.data.name // 你访问了 name
-app1.data.age = 100; // 你设置了 age，新的值为100
+app1.data.age = 100; // 你设置了 age，新的值为 100
 app2.data.university // 你访问了 university
 app2.data.major = 'science' // 你设置了 major，新的值为 science
