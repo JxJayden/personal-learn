@@ -36,3 +36,4 @@ function merge(leftArr, rightArr) {
 }
 
 console.log(mergeSort(arr));
+
