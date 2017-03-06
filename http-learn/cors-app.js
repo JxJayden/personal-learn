@@ -1,6 +1,5 @@
 // cors
-const http = require('http'),
-    URL = require('url');
+const http = require('http');
 
 http.createServer((request, response) => {
     response.setHeader('Access-Control-Allow-Origin', '*');
